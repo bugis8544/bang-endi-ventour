@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bang Endi Ventour - Konsultan Umroh & Haji Amanah</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --primary: #064e3b; --accent: #c5a059; --bg-cream: #fdfbf7; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-cream); }
+        .islamic-pattern-overlay { background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0l5 15 15 5-15 5-5 15-5-15-15-5 15-5 5-15z' fill='%23c5a059' fill-opacity='0.03'/%3E%3C/svg%3E"); }
+        .gradient-gold { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Layout Grid Galeri */
+        .gallery-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        @media (min-width: 768px) {
+            .gallery-container { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 200px); gap: 15px; }
+            .featured { grid-column: span 2; grid-row: span 2; }
+        }
+        .gallery-item { position: relative; border-radius: 1.5rem; overflow: hidden; cursor: pointer; background: #eee; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* Modal Animation */
+        @keyframes modalShow { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .animate-modal { animation: modalShow 0.4s ease-out forwards; }
+    </style>
+</head>
+<body class="islamic-pattern-overlay text-slate-800 antialiased overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-emerald-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-emerald-900 p-2 rounded-lg"><span class="text-white font-bold text-xl">VENTOUR</span></div>
+                <p class="hidden sm:block text-sm font-bold text-slate-700">Bang Endi Ventour</p>
+            </div>
+            <button onclick="contactWA('Navbar')" class="bg-emerald-700 text-white px-6 py-2 rounded-full text-sm font-bold active:scale-95 shadow-md">Konsultasi</button>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-4 text-center max-w-6xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-emerald-950 mb-6 leading-tight">
+            Berangkat Umroh <span class="text-transparent bg-clip-text gradient-gold">Tanpa Bingung</span>
+        </h1>
+        <p class="text-slate-600 text-lg max-w-2xl mx-auto mb-10">Dibimbing langsung oleh Bang Endi Ventour dari proses dokumen hingga Tanah Suci.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button onclick="contactWA('Hero')" class="bg-emerald-600 text-white px-10 py-4 rounded-2xl font-bold shadow-lg active:scale-95 transition-transform">Chat WhatsApp</button>
+            <a href="#paket" class="bg-white border-2 border-emerald-100 text-emerald-900 px-10 py-4 rounded-2xl font-bold hover:bg-emerald-50 transition-colors">Lihat Paket</a>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 bg-white/50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 reveal">
+                <img src="https://i.postimg.cc/vB2ftNwB/file-00000000b8a071fab88d994cda1b1eb3.png" alt="Bang Endi Ventour" class="rounded-[3rem] shadow-2xl border-8 border-white w-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 reveal">
+                <h2 class="text-4xl font-extrabold text-emerald-950 mb-6 leading-tight">Mengenal Bang Endi</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">Sebagai konsultan resmi Ventour Travel, saya berkomitmen memastikan setiap tamu Allah mendapatkan pelayanan terbaik, transparan, dan sesuai sunnah.</p>
+                <div class="bg-white p-6 border-l-4 border-amber-500 rounded-r-2xl italic text-slate-700 shadow-sm">
+                    "Keamanan dan kenyamanan Anda adalah prioritas amanah saya."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="paket" class="py-24 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-4xl font-extrabold text-emerald-950 mb-4">Pilihan Paket Ibadah</h2>
+            <p class="text-slate-500">Paket lengkap termasuk perlengkapan, visa, dan bimbingan manasik.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 items-start">
+            <div class="reveal bg-white p-8 rounded-[2.5rem] border border-emerald-100 shadow-sm flex flex-col h-full">
+                <h4 class="text-xl font-bold text-emerald-950 mb-2">Paket Hemat</h4>
+                <p class="text-3xl font-black text-emerald-900 mb-6">Rp 26.5jt</p>
+                <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Durasi 9 Hari</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Hotel Bintang 3 (Dekat)</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Maskapai Ekonomi</li>
+                </ul>
+                <button onclick="contactWA('Paket Hemat')" class="w-full py-4 rounded-xl bg-emerald-50 text-emerald-700 font-bold hover:bg-emerald-700 hover:text-white transition-all">Pilih Paket</button>
+            </div>
+
+            <div class="reveal bg-emerald-900 p-8 rounded-[2.5rem] border-4 border-amber-400 text-white transform md:scale-105 shadow-2xl relative flex flex-col h-full">
+                <div class="absolute top-0 right-0 bg-amber-400 text-emerald-950 font-black px-4 py-1 rounded-bl-xl text-[10px] uppercase">Terlaris</div>
+                <h4 class="text-xl font-bold mb-2">Paket Nyaman</h4>
+                <p class="text-3xl font-black text-amber-400 mb-6">Rp 32jt - 36jt</p>
+                <ul class="space-y-3 mb-8 text-sm text-emerald-100 flex-grow">
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-amber-400"></i> Hotel Bintang 4/5 (Walk Distance)</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-amber-400"></i> Maskapai Full Service (Direct)</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-amber-400"></i> Menu Masakan Indonesia</li>
+                </ul>
+                <button onclick="contactWA('Paket Nyaman')" class="w-full py-4 rounded-xl bg-amber-400 text-emerald-950 font-black hover:bg-white transition-all active:scale-95">Pilih Paket</button>
+            </div>
+
+            <div class="reveal bg-white p-8 rounded-[2.5rem] border border-emerald-100 shadow-sm flex flex-col h-full">
+                <h4 class="text-xl font-bold text-emerald-950 mb-2">Paket Premium</h4>
+                <p class="text-3xl font-black text-emerald-900 mb-6">Rp 42jt+</p>
+                <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Hotel Bintang 5 Front Row</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Kereta Cepat Saudi</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Layanan VVIP</li>
+                </ul>
+                <button onclick="contactWA('Paket Premium')" class="w-full py-4 rounded-xl bg-emerald-50 text-emerald-700 font-bold hover:bg-emerald-700 hover:text-white transition-all">Pilih Paket</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-emerald-950 text-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-extrabold text-center mb-12 text-amber-400">Momen Berkesan Jamaah</h2>
+            <div class="gallery-container reveal">
+                <div class="gallery-item featured" onclick="openVideo('mPHkvCnllIY')">
+                    <img src="https://img.youtube.com/vi/mPHkvCnllIY/maxresdefault.jpg" alt="Video Ventour">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-all">
+                        <i class="fas fa-play-circle text-6xl text-white opacity-90"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openVideo('eHMfoCeQzW0')">
+                    <img src="https://img.youtube.com/vi/eHMfoCeQzW0/hqdefault.jpg" alt="Shorts Ventour 1">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/20"><i class="fas fa-play text-white text-3xl"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openVideo('VcJto8qXc2Y')">
+                    <img src="https://img.youtube.com/vi/VcJto8qXc2Y/hqdefault.jpg" alt="Shorts Ventour 2">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/20"><i class="fas fa-play text-white text-3xl"></i></div>
+                </div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=600" alt="Madinah"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1623055975769-158f8b89e13d?q=80&w=600" alt="City Tour"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Apa Kata Jamaah?</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="reveal bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <p class="text-slate-600 italic mb-4">"Bang Endi sangat detail menjelaskan dari awal. Aman banget!"</p>
+                <p class="font-bold text-emerald-900">- Bpk. Pramono (Jakarta)</p>
+            </div>
+            <div class="reveal bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <p class="text-slate-600 italic mb-4">"Pembimbingannya sabar, muthawwifnya juga profesional. Terima kasih."</p>
+                <p class="font-bold text-emerald-900">- Ibu Siti Aminah (Depok)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-emerald-950 text-white/40 py-12 text-center border-t border-white/5">
+        <p class="text-sm font-bold uppercase tracking-widest mb-2">Bang Endi Ventour &copy; <span id="year"></span></p>
+        <p class="text-[10px]">PT. Ventura Semesta Wisata | PPIU Resmi Kemenag RI</p>
+    </footer>
+
+    <button onclick="contactWA('Sticky')" class="fixed bottom-6 right-6 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </button>
+
+    <div id="mainModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
+        <div class="absolute inset-0" onclick="closeModal()"></div>
+        
+        <div id="videoContent" class="relative w-full max-w-4xl hidden animate-modal">
+            <button onclick="closeModal()" class="absolute -top-12 right-0 text-white text-3xl">&times;</button>
+            <div class="aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
+                <iframe id="videoFrame" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="promoContent" class="relative w-full max-w-md hidden animate-modal">
+            <button onclick="closeModal()" class="absolute -top-4 -right-4 bg-red-600 text-white w-10 h-10 rounded-full z-10 font-bold shadow-xl">X</button>
+            <div class="bg-white rounded-3xl overflow-hidden cursor-pointer shadow-2xl" onclick="contactWA('Promo Popup')">
+                <img src="https://i.postimg.cc/dtVz3b3t/file-00000000d79471faaf53b62f0904655e.png" alt="Promo Spesial">
+                <div class="p-6 text-center">
+                    <h3 class="text-emerald-900 font-bold text-xl mb-2">Diskon Spesial!</h3>
+                    <p class="text-slate-500 mb-6 text-sm leading-relaxed">26 JUTA UDAH BISA UMROH NYAMAN</p>
+                    <div class="bg-emerald-600 text-white py-3 rounded-xl font-bold">Konsultasi Sekarang! </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const WA_NUMBER = "628123456789"; 
+        
+        function contactWA(src) { 
+            const text = encodeURIComponent(`Assalamu'alaikum Bang Endi, saya ingin tanya program Umroh (Info: ${src})`);
+            window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, '_blank'); 
+        }
+
+        function openVideo(id) {
+            const modal = document.getElementById('mainModal');
+            const videoCont = document.getElementById('videoContent');
+            const promoCont = document.getElementById('promoContent');
+            const iframe = document.getElementById('videoFrame');
+
+            promoCont.classList.add('hidden');
+            videoCont.classList.remove('hidden');
+            iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+            modal.classList.replace('hidden', 'flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mainModal');
+            const iframe = document.getElementById('videoFrame');
+            modal.classList.replace('flex', 'hidden');
+            iframe.src = ""; 
+        }
+
+        window.onload = () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Cek SessionStorage agar promo hanya muncul 1x per kunjungan
+            if (!sessionStorage.getItem('promoShown')) {
+                setTimeout(() => {
+                    const modal = document.getElementById('mainModal');
+                    const videoCont = document.getElementById('videoContent');
+                    const promoCont = document.getElementById('promoContent');
+
+                    // Munculkan promo hanya jika user tidak sedang menonton video
+                    if (modal.classList.contains('hidden')) {
+                        videoCont.classList.add('hidden');
+                        promoCont.classList.remove('hidden');
+                        modal.classList.replace('hidden', 'flex');
+                        sessionStorage.setItem('promoShown', 'true');
+                    }
+                }, 5000);
+            }
+            reveal();
+        };
+
+        function reveal() {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active");
+            });
+        }
+        window.addEventListener("scroll", reveal);
+    </script>
+</body>
+</html>
